@@ -1,7 +1,7 @@
 {
   "name": "meme-generator",
   "version": "1.0.0",
-  "description": "",
+  "description": "school project, meme-generator",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -11,13 +11,14 @@
     "type": "git",
     "url": "git+https://github.com/mewarren/meme-generator.git"
   },
-  "author": "",
+  "author": "Michael Warren",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/mewarren/meme-generator/issues"
   },
   "homepage": "https://github.com/mewarren/meme-generator#readme",
   "devDependencies": {
+    "clean-webpack-plugin": "^0.1.18",
     "webpack": "^3.11.0"
   }
 }
