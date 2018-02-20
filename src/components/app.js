@@ -7,24 +7,24 @@ export default class App extends Component {
     super();
 
     this.state = {
-      headline: 'This is the headline text',
-      subhead: 'This is the subhead text'
+      toptext: 'This is the headline text',
+      bottomtext: 'This is the subhead text'
     }
 
-    this.changeHeadline = this.changeHeadline.bind(this);
-    this.changeSubhead = this.changeSubhead.bind(this);
+    this.changeToptext = this.changeToptext.bind(this);
+    this.changeBottomtext = this.changeBottomtext.bind(this);
     this.handleUpload = this.handleUpload.bind(this);
   }
 
-  changeHeadline({ target }){
+  changeToptext({ target }){
     this.setState({
-      headline: target.value
+      toptext: target.value
     });
   }
 
-  changeSubhead({ target }){
+  changeBottomtext({ target }){
     this.setState({
-      subhead: target.value
+      bottomtext: target.value
     });
   }
 
@@ -39,7 +39,7 @@ export default class App extends Component {
   }
 
   render() {
-    const { background, headline, subhead } = this.state;
+    const { background, toptext, bottomtext } = this.state;
 
     return (
       <div>
@@ -55,12 +55,12 @@ export default class App extends Component {
 
           <label>
             Headline Text:
-            <input type="text" onChange={this.changeHeadline}/>
+            <input type="text" onChange={this.changeToptext}/>
           </label>
 
           <label>
             Subhead Text:
-            <input type="text" onChange={this.changeSubhead}/>
+            <input type="text" onChange={this.changeBottomtext}/>
           </label>
 
         </fieldset>
@@ -69,8 +69,8 @@ export default class App extends Component {
 
           backgroundImage: background ? `url(${background}` : null
         }}>
-          <p id="headline">{headline}</p>
-          <p id="subhead">{subhead}</p>
+          <p id="toptext">{toptext}</p>
+          <p id="bottomtext">{bottomtext}</p>
         </section>
 
         <footer>copyright</footer>

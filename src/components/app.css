@@ -23,12 +23,12 @@ section {
     color: white;
   }
 
-  #headline {
+  #toptext {
     position: absolute;
-    margin-top: 5px;
+    margin-top: 10px;
   }
 
-  #subhead {
+  #bottomtext {
     position: absolute;
     bottom: 5px;
   }
