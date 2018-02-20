@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import './style.css';
 
 export default class App extends Component{
 
@@ -6,7 +7,7 @@ export default class App extends Component{
         super();
 
         this.state = {
-            test: "is this working?"
+            test: "hello"
         }
     }
 
