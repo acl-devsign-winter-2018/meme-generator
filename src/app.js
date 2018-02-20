@@ -7,14 +7,25 @@ export default class App extends Component{
         super();
 
         this.state = {
-            test: "hello"
+            memeText: "hello"
         }
+
+        this.handleMemeText = this.handleMemeText.bind(this);
+    }
+
+    handleMemeText({ target }){
+        this.setState({
+            memeText: target.value
+        })
     }
 
     render(){
-        const { test } = this.state;
+        const { memeText } = this.state;
         return(
-            <div>{test}</div>
+            <div>
+                <input type="text" onChange={this.handleMemeText}/>
+                <div>{memeText}</div>
+            </div>
         )
    }
 }
