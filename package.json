@@ -1,0 +1,23 @@
+{
+  "name": "meme-generator",
+  "version": "1.0.0",
+  "description": "for lab",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "webpack"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/acl-devsign-winter-2018/meme-generator.git"
+  },
+  "author": "@TheArtBug",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/acl-devsign-winter-2018/meme-generator/issues"
+  },
+  "homepage": "https://github.com/acl-devsign-winter-2018/meme-generator#readme",
+  "devDependencies": {
+    "webpack": "^3.11.0"
+  }
+}
