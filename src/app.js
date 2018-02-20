@@ -31,11 +31,11 @@ export default class App extends Component{
     }
 
     handleFake({ target }){
-        debugger;
         const noun = faker.hacker.noun();
         const verb = faker.hacker.verb();
         const adj = faker.hacker.adjective();
         const noun2 = faker.hacker.noun();
+        
         this.setState({
             memeText: `${noun} ${verb} ${adj} ${noun2}`
         })
