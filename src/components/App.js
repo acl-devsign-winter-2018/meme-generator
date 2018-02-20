@@ -1,1 +1,1 @@
-console.log('this came from App.js!');
+console.log(() => 'this came from App.js!');
