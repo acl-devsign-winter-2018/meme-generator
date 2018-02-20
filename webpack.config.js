@@ -13,6 +13,15 @@ module.exports = {
         contentBase: './build',
     },
     devtool: 'inline-source-map',
+    module:{
+        rules:[
+            {
+                test: /\.js$/,
+                loader: 'babel-loader',
+                exclude: /node_modules/
+            }
+        ],    
+    },
     plugins: [
         new CleanWebpackPlugin(build),
         new HtmlPlugin({ template: './src/index.html' }),
