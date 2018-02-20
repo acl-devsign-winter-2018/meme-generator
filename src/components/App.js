@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import './app.css';
+import dom2image from 'dom-to-image';
+import fileSave from 'file-saver';
 
 export default class App extends Component {
 
@@ -17,12 +19,19 @@ export default class App extends Component {
     this.fonts = ['Helvetica', 'Arial', 'Times', 'Courier', 'Tahoma', 'Garamond', 'Impact']
 
     this.handleFontChange = this.handleFontChange.bind(this);
+    this.handleExport = this.handleExport.bind(this);
   }
 
   handleFontChange({target}) {
     this.setState({
       font: target.value || 'Helvetica'
     })
+  }
+
+  handleExport() {
+    dom2image.toBlob(this.figure).then(blob => {
+      fileSave.saveAs(blob, 'generated-meme.png');
+    });
   }
   
   
@@ -47,19 +56,25 @@ export default class App extends Component {
           </label>
         </form>
         
-        <figure>
+        <figure
+          ref={node => this.figure = node}
+        >
           <img src={background}/>
           <figcaption 
             style={{
             fontFamily: `${font}`
             }} 
-            id="header">{header}</figcaption>
+            id="header"
+            >{header}</figcaption>
           <figcaption 
             style={{
             fontFamily: `${font}`
             }} 
-            id="footer">{footer}</figcaption>
+            id="footer"
+            >{footer}</figcaption>
         </figure>
+
+        <button onClick={this.handleExport}>Save Meme</button>
       </main>
     
     );
