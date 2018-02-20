@@ -12,8 +12,18 @@ module.exports = {
   devServer: {
     contentBase: './build',
   },
+  devtool: 'inline-source-map',
   plugins: [
     new CleanWebpackPlugin(`${path}/bundle.*.js`),
     new HtmlPlugin({ template: './src/index.html' })
-  ]  
+  ],
+  module: {
+    rules: [
+      {
+        test: /\.js$/,
+        loader: 'babel-loader',
+        exclude: /node_modules/
+      }
+    ]
+  }  
 }
