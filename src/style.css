@@ -15,11 +15,17 @@ div.meme{
     height: 700px;
     width: 50%;
     background-repeat: no-repeat;
-    margin: 0 auto
+    background-image: cover;
+    background-size: contain;
+    margin: 20px auto
 }
 
 div.options{
     display: block
 
+}
+
+input.fontSize{
+    width: 40px
 }
 
