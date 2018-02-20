@@ -1,0 +1,22 @@
+{
+  "name": "meme-generator",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "webpack"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/heicj/meme-generator.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/heicj/meme-generator/issues"
+  },
+  "homepage": "https://github.com/heicj/meme-generator#readme",
+  "devDependencies": {
+    "webpack": "^3.11.0"
+  }
+}
