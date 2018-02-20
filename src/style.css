@@ -1,0 +1,35 @@
+body{
+    background-color: rgba(19, 58, 82, 0.589);
+    font-size: 20px
+}
+
+section{
+    height: 100%;
+    width: 100%;
+    margin: 0 auto;
+    text-align: center
+}
+
+div.meme{
+    height: 700px;
+    max-width: 100%;
+    background-repeat: no-repeat;
+    background-image: cover;
+    background-size: contain;
+    background-position: center;
+    margin: 0 auto
+}
+
+div.options{
+    display: block;
+    margin-bottom: 30px
+}
+
+input.fontSize{
+    width: 40px
+}
+
+img{
+    margin: 0 auto;
+}
+
