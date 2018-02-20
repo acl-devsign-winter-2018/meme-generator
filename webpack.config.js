@@ -9,6 +9,9 @@ module.exports = {
         filename: 'bundle.js',
         path: build,
     },
+    devServer: {
+        contentBase: './build',
+    },
     plugins: [
         new CleanWebpackPlugin(build),
     ]
