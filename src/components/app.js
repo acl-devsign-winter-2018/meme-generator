@@ -43,9 +43,16 @@ export default class App extends Component {
 
     return (
       <div>
-        <h1>Meme Generator</h1>
+        <header>
+          <h1>Meme Generator</h1>
+        </header>
 
-        <p>
+        <fieldset>
+          <label>
+            Background Image:
+            <input type="file" onChange={this.handleUpload}/>  
+          </label>
+
           <label>
             Headline Text:
             <input type="text" onChange={this.changeHeadline}/>
@@ -56,19 +63,18 @@ export default class App extends Component {
             <input type="text" onChange={this.changeSubhead}/>
           </label>
 
-          <label>
-            Background Image:
-            <input type="file" onChange={this.handleUpload}/>  
-          </label>
-        </p>
+        </fieldset>
 
         <section style={{
 
           backgroundImage: background ? `url(${background}` : null
         }}>
-          <p>{headline}</p>
-          <p>{subhead}</p>
+          <p id="headline">{headline}</p>
+          <p id="subhead">{subhead}</p>
         </section>
+
+        <footer>copyright</footer>
+
       </div>
 
     );

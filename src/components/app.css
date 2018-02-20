@@ -1,8 +1,42 @@
+div, fieldset, section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+fieldset {
+  border: none;
+  input {
+    background: rgb(240,240,240)
+  }
+}
+
+
+
 section {
+  position: relative;
   width: 90vw;
   height: 90vw;
+  background-color: brown;
   p {
     font-size: 2rem;
     color: white;
+  }
+
+  #headline {
+    position: absolute;
+    margin-top: 5px;
+  }
+
+  #subhead {
+    position: absolute;
+    bottom: 5px;
+  }
+}
+
+@media (min-width: 500px) {
+  section {
+    width: 450px;
+    height: 450px;
   }
 }
