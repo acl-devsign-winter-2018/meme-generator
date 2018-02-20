@@ -10,7 +10,8 @@ export default class App extends Component {
       header: "upload a picture!",
       footer: "write some meme text!",
       color: "red",
-      font: 'Helvetica'
+      font: 'Helvetica',
+      background: 'https://upload.wikimedia.org/wikipedia/commons/6/6a/A_blank_flag.png'
     }
     
     this.fonts = ['Helvetica', 'Arial', 'Times', 'Courier', 'Tahoma', 'Garamond', 'Impact']
@@ -26,15 +27,12 @@ export default class App extends Component {
   
   
   render() {
-    const { header, footer, color, font } = this.state;
+    const { header, footer, color, font, background } = this.state;
 
     return (
       <main id="main">
         <header>
-          <h1 
-          style={{
-            fontFamily: `${font}`
-          }}>Meme Generator</h1>
+          <h1>Meme Generator</h1>
         </header>
 
         <form>
@@ -48,6 +46,20 @@ export default class App extends Component {
               </select>
           </label>
         </form>
+        
+        <figure>
+          <img src={background}/>
+          <figcaption 
+            style={{
+            fontFamily: `${font}`
+            }} 
+            id="header">{header}</figcaption>
+          <figcaption 
+            style={{
+            fontFamily: `${font}`
+            }} 
+            id="footer">{footer}</figcaption>
+        </figure>
       </main>
     
     );

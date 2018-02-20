@@ -1,3 +1,16 @@
-h1 {
-  color: green;
+#main {
+  figure {
+    position: relative;
+    figcaption {
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      &#header {
+        top: 0;
+      }
+      &#footer {
+        bottom: 0;
+      }
+    }
+  }
 }
