@@ -1,4 +1,6 @@
 const CleanWebpackPlugin = require('clean-webpack-plugin');
+const HtmlPlugin = require('html-webpack-plugin');
+
 
 
 const path = `${__dirname}/build`;
@@ -13,6 +15,8 @@ module.exports = {
         contentBase: './build',
     },
     plugins: [
-        new CleanWebpackPlugin(`${path}/bundle.*.js`)
+        new CleanWebpackPlugin(`${path}/bundle.*.js`),
+        new HtmlPlugin({ template: './src/index.html' })
+
     ]
 }
