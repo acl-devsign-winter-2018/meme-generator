@@ -26,14 +26,14 @@ export default class App extends Component {
   
   
   render() {
-    const { header, footer, color, font, fonts } = this.state;
+    const { header, footer, color, font } = this.state;
 
     return (
       <main id="main">
         <header>
           <h1 
           style={{
-            fontFamily: {font}
+            fontFamily: `${font}`
           }}>Meme Generator</h1>
         </header>
 
