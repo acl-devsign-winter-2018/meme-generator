@@ -10,7 +10,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/acl-devsign-winter-2018/meme-generator.git"
+    "url": "git+https://github.com/Theartbug/meme-generator.git"
   },
   "author": "@TheArtBug",
   "license": "MIT",
@@ -19,12 +19,22 @@
   },
   "homepage": "https://github.com/acl-devsign-winter-2018/meme-generator#readme",
   "devDependencies": {
+    "autoprefixer": "^8.0.0",
     "babel-core": "^6.26.0",
+    "babel-eslint": "^8.2.1",
     "babel-loader": "^7.1.2",
     "babel-preset-env": "^1.6.1",
     "babel-preset-react": "^6.24.1",
     "clean-webpack-plugin": "^0.1.18",
+    "css-loader": "^0.28.9",
+    "eslint-plugin-babel": "^4.1.2",
+    "eslint-plugin-react": "^7.6.1",
+    "file-loader": "^1.1.7",
     "html-webpack-plugin": "^2.30.1",
+    "postcss-loader": "^2.1.0",
+    "precss": "^3.1.0",
+    "style-loader": "^0.20.2",
+    "url-loader": "^0.6.2",
     "webpack": "^3.11.0",
     "webpack-dev-server": "^2.11.1"
   },
