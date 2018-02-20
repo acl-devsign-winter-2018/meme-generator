@@ -18,8 +18,14 @@ section {
   width: 90vw;
   height: 90vw;
   background-color: brown;
+  background-size: cover;
   p {
+    width: 90%;
+    font-family: sans-serif;
+    font-weight: bold;
     font-size: 2rem;
+    text-transform: uppercase;
+    text-align: center;
     color: white;
   }
 

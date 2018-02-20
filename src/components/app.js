@@ -7,8 +7,9 @@ export default class App extends Component {
     super();
 
     this.state = {
-      toptext: 'This is the headline text',
-      bottomtext: 'This is the subhead text'
+      toptext: "I don't always build apps",
+      bottomtext: 'But when I do, I use React',
+      background: 'https://ih1.redbubble.net/image.311718694.9588/flat,800x800,075,t.jpg'
     }
 
     this.changeToptext = this.changeToptext.bind(this);
