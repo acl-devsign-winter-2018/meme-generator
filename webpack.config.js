@@ -1,3 +1,6 @@
+const CleanWebpackPlugin = require('clean-webpack-plugin');
+
+
 const build = `${__dirname}/build`;
 
 module.exports = {
@@ -5,6 +8,9 @@ module.exports = {
     output: {
         filename: 'bundle.js',
         path: build,
-    }
+    },
+    plugins: [
+        new CleanWebpackPlugin(build),
+    ]
 
 }
