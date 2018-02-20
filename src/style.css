@@ -1,5 +1,5 @@
 body{
-    background-color: rgb(28, 148, 148);
+    background-color: rgba(19, 58, 82, 0.589);
     font-size: 20px
 }
 
@@ -21,7 +21,8 @@ div.meme{
 }
 
 div.options{
-    display: block
+    display: block;
+    margin-bottom: 30px
 }
 
 input.fontSize{

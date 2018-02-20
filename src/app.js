@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import './style.css';
 import dom2image from 'dom-to-image';
 import fileSaver from 'file-saver';
+import faker from 'faker';
 
 export default class App extends Component{
 
@@ -20,11 +21,23 @@ export default class App extends Component{
         this.handleUpload = this.handleUpload.bind(this);
         this.handleURL = this.handleURL.bind(this)
         this.handleExport = this.handleExport.bind(this)
+        this.handleFake = this.handleFake.bind(this)
     }
 
     handleMemeText({ target }){
         this.setState({
             memeText: target.value
+        })
+    }
+
+    handleFake({ target }){
+        debugger;
+        const noun = faker.hacker.noun();
+        const verb = faker.hacker.verb();
+        const adj = faker.hacker.adjective();
+        const noun2 = faker.hacker.noun();
+        this.setState({
+            memeText: `${noun} ${verb} ${adj} ${noun2}`
         })
     }
 
@@ -72,21 +85,27 @@ export default class App extends Component{
                     <div>
                         <label>Your text: </label>
                         <input type="text" onChange={this.handleMemeText}/>
+                    </div>
+                    <div>
+                        <button onClick={this.handleFake}>Fake Text</button>
+                    </div>
 
+                    <div>
                         <label>Upload Image URL or Image:</label>
                         <input name="url" onChange={this.handleURL}/>
                         <input type="file" onChange={this.handleUpload}/>
                     </div>
-                    <div>
-                        <button onClick={this.handleExport}>Save</button>
-                    </div>
+
                     <div>
                         Text Color:
                         <input type="color" value={color} onChange={this.handleColor}/>
                     
                         Font Size:
-                        <input className="fontSize" type="text" onChange={this.handleSize}/>
-                       
+                        <input className="fontSize" type="text" onChange={this.handleSize}/>  
+                    </div>
+
+                    <div>
+                        <button onClick={this.handleExport}>Save Meme</button>
                     </div>
                 </div>
 
