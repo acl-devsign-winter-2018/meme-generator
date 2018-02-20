@@ -27,6 +27,8 @@ section {
     text-transform: uppercase;
     text-align: center;
     color: white;
+    filter: drop-shadow(0 0 30px #111);
+
   }
 
   #toptext {
