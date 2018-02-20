@@ -1,5 +1,6 @@
 body{
-    background-color: aqua;
+    background-color: rgb(28, 148, 148);
+    font-size: 20px
 }
 
 section{
@@ -9,3 +10,16 @@ section{
     margin: 0 auto;
     text-align: center
 }
+
+div.meme{
+    height: 700px;
+    width: 50%;
+    background-repeat: no-repeat;
+    margin: 0 auto
+}
+
+div.options{
+    display: block
+
+}
+
