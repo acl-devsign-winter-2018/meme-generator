@@ -7,16 +7,24 @@ export default class App extends Component {
     super();
 
     this.state = {
-      background: 'https://upload.wikimedia.org/wikipedia/commons/6/6e/Golde33443.jpg'
+      headline: 'This is the headline text',
+      subhead: 'This is the subhead text'
     }
 
-    this.handleBackground = this.handleBackground.bind(this);
+    this.changeHeadline = this.changeHeadline.bind(this);
+    this.changeSubhead = this.changeSubhead.bind(this);
     this.handleUpload = this.handleUpload.bind(this);
   }
 
-  handleBackground({ target }){
+  changeHeadline({ target }){
     this.setState({
-      background: target.value
+      headline: target.value
+    });
+  }
+
+  changeSubhead({ target }){
+    this.setState({
+      subhead: target.value
     });
   }
 
@@ -31,7 +39,7 @@ export default class App extends Component {
   }
 
   render() {
-    const { background } = this.state;
+    const { background, headline, subhead } = this.state;
 
     return (
       <div>
@@ -39,8 +47,17 @@ export default class App extends Component {
 
         <p>
           <label>
-            Background:
-            <input name="url" onChange={this.handleBackground}/>
+            Headline Text:
+            <input type="text" onChange={this.changeHeadline}/>
+          </label>
+
+          <label>
+            Subhead Text:
+            <input type="text" onChange={this.changeSubhead}/>
+          </label>
+
+          <label>
+            Background Image:
             <input type="file" onChange={this.handleUpload}/>  
           </label>
         </p>
@@ -49,6 +66,8 @@ export default class App extends Component {
 
           backgroundImage: background ? `url(${background}` : null
         }}>
+          <p>{headline}</p>
+          <p>{subhead}</p>
         </section>
       </div>
 
