@@ -20,6 +20,8 @@ export default class App extends Component {
 
     this.handleFontChange = this.handleFontChange.bind(this);
     this.handleExport = this.handleExport.bind(this);
+    this.handleUpload = this.handleUpload.bind(this);
+    this.handleUrl = this.handleUrl.bind(this);
   }
 
   handleFontChange({target}) {
@@ -33,6 +35,22 @@ export default class App extends Component {
       fileSave.saveAs(blob, 'generated-meme.png');
     });
   }
+
+  handleUpload({target}) {
+    const reader = new FileReader();
+
+    reader.readAsDataURL(target.files[0]);
+    
+    reader.onload = () => {
+      this.setState({ background: reader.result });
+    };
+  }
+
+  handleUrl({target}) {
+    this.setState({
+      background: target.value
+    });
+  }
   
   
   render() {
@@ -44,7 +62,15 @@ export default class App extends Component {
           <h1>Meme Generator</h1>
         </header>
 
-        <form>
+        <div id="label-holder">
+          <label>
+            Upload an image:
+            <input type="file" onChange={this.handleUpload}/>
+          </label>
+          <label>
+            Input URL:
+            <input type="url" onChange={this.handleUrl}/>
+          </label>
           <label>
             Select a font:
               <select onChange={this.handleFontChange}>
@@ -54,7 +80,7 @@ export default class App extends Component {
                 ))}
               </select>
           </label>
-        </form>
+        </div>
         
         <figure
           ref={node => this.figure = node}

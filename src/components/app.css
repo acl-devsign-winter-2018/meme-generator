@@ -1,4 +1,12 @@
 #main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  #label-holder {
+    display: flex;
+
+  }
   figure {
     position: relative;
     figcaption {
