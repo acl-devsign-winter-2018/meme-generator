@@ -6,7 +6,7 @@ export default class App extends Component{
         super();
 
         this.state = {
-            test: "hello"
+            test: "is this working?"
         }
     }
 
