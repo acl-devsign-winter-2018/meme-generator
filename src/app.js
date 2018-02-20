@@ -10,6 +10,7 @@ export default class App extends Component{
 
         this.state = {
             memeText: "",
+            color: "#000000"
         }
 
         this.handleMemeText = this.handleMemeText.bind(this);
@@ -80,13 +81,14 @@ export default class App extends Component{
                     </div>
                     <div>
                         Text Color:
-                        <select onChange={this.handleColor}>
+                        <input type="color" value={color} onChange={this.handleColor}/>
+                        {/* <select onChange={this.handleColor}>
                             <option>Black</option>
                             <option>White</option>
                             <option>Green</option>
                             <option>Red</option>
                             <option>Purple</option>
-                        </select>
+                        </select> */}
                         Font Size:
                         <select onChange={this.handleSize}>
                             <option>20</option>
