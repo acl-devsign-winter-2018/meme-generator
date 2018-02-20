@@ -57,7 +57,7 @@ export default class App extends Component{
     }
 
     handleExport(){
-        dom2image.toBlob(this.section).then(blob => {
+        dom2image.toBlob(this.div).then(blob => {
             fileSaver.saveAs(blob, 'meme.png');
         })
     }
@@ -86,18 +86,13 @@ export default class App extends Component{
                     
                         Font Size:
                         <input className="fontSize" type="text" onChange={this.handleSize}/>
-                        {/* <select onChange={this.handleSize}>
-                            <option>30</option>
-                            <option>40</option>
-                            <option>60</option>
-                            <option>80</option>
-                        </select>   */}
+                       
                     </div>
                 </div>
 
                 <div
                 className="meme"
-                ref={node => this.section = node}
+                ref={node => this.div = node}
                 style={{
                     color: color,
                     fontSize: `${size}px`,

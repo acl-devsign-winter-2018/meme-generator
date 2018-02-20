@@ -4,28 +4,31 @@ body{
 }
 
 section{
-    height: 800px;
-    width: 70%;
-    /* background-color: lightcyan; */
+    height: 100%;
+    width: 100%;
     margin: 0 auto;
     text-align: center
 }
 
 div.meme{
     height: 700px;
-    width: 50%;
+    max-width: 100%;
     background-repeat: no-repeat;
     background-image: cover;
     background-size: contain;
-    margin: 20px auto
+    background-position: center;
+    margin: 0 auto
 }
 
 div.options{
     display: block
-
 }
 
 input.fontSize{
     width: 40px
+}
+
+img{
+    margin: 0 auto;
 }
 

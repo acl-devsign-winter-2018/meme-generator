@@ -39,8 +39,15 @@ module.exports = {
                         loader: 'postcss-loader',
                         options: { sourceMap: true }
                     }
-                ]
-            }    
+                ] 
+            },
+            {
+                test: /\.(jpg|png|svg)$/,
+                use: {
+                  loader: 'url-loader',
+                  options: { limit: 5000 },
+                },
+            }
         ],    
     },
     plugins: [
