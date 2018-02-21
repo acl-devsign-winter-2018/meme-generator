@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import './app.css';
+import dom2image from 'dom-to-image';
+import fileSaver from 'file-saver';
 
 export default class App extends Component {
 
@@ -7,14 +9,15 @@ export default class App extends Component {
     super();
 
     this.state = {
-      toptext: "I don't always build apps",
+      toptext: 'I don\'t always build apps',
       bottomtext: 'But when I do, I use React',
       background: 'https://ih1.redbubble.net/image.311718694.9588/flat,800x800,075,t.jpg'
-    }
+    };
 
     this.changeToptext = this.changeToptext.bind(this);
     this.changeBottomtext = this.changeBottomtext.bind(this);
     this.handleUpload = this.handleUpload.bind(this);
+    this.handleExport = this.handleExport.bind(this);
   }
 
   changeToptext({ target }){
@@ -26,6 +29,12 @@ export default class App extends Component {
   changeBottomtext({ target }){
     this.setState({
       bottomtext: target.value
+    });
+  }
+
+  handleExport(){
+    dom2image.toBlob(this.section).then(blob => {
+      fileSaver.saveAs(blob, 'my-meme.png');
     });
   }
 
@@ -63,21 +72,26 @@ export default class App extends Component {
             Subhead Text:
             <input type="text" onChange={this.changeBottomtext}/>
           </label>
-
         </fieldset>
 
-        <section style={{
+        <section 
+          className="meme" 
+          ref={node => this.section = node}
+          style={{
+            backgroundImage: background ? `url(${background}` : null
+          }}>
 
-          backgroundImage: background ? `url(${background}` : null
-        }}>
           <p id="toptext">{toptext}</p>
           <p id="bottomtext">{bottomtext}</p>
         </section>
 
-        <footer>copyright</footer>
+        <section>
+          <button onClick={this.handleExport}>Save Meme</button>
+        </section>
+
+        {/* <footer>copyright</footer> */}
 
       </div>
-
     );
   }
 }
