@@ -13,7 +13,8 @@ export default class App extends Component {
 
         this.handleUpload = this.handleUpload.bind(this);
         this.handleText = this.handleText.bind(this);
-
+        this.handleColor = this.handleColor.bind(this);
+        this.handleSize = this.handleSize.bind(this);
     }
 
     handleUpload({ target }) {
@@ -33,8 +34,20 @@ export default class App extends Component {
         })
     }
 
+    handleColor( { target }){
+        this.setState({
+            color: target.value
+        })
+    }
+
+    handleSize( { target }){
+        this.setState({
+            size: target.value
+        })
+    }
+
     render() {
-        const { background, content, text } = this.state;
+        const { background, color, content, size, text } = this.state;
 
         return (
             <div className="App">
@@ -43,25 +56,37 @@ export default class App extends Component {
                 </header>
                 <div>
                     <label>Your text: </label>
-                            <input type="text" onChange={this.handleMemeText}/>
+                            <input type="text" onChange={this.handleText}/>
                     </div>
 
-                <p>
+                <div>
                     <label>
                         Background: 
                         <input type="file" onChange={this.handleUpload}/>
                     </label>
-                </p>
+                </div>
 
-                <section 
-                    ref={node => this.section = node}
+                <div>
+                        Text Color:
+                        <input type="color" value={color} onChange={this.handleColor}/>
+                    
+                        Font Size:
+                        <input className="fontSize" type="text" onChange={this.handleSize}/>  
+                </div>
+
+                <div 
+                    className ="meme"
+                    ref={node => this.div = node}
                     style={{
-                        backgroundImage: background ? `url(${background})` : null
+                        backgroundImage: background ? `url(${background})` : null,
+                        color: color,
+                        fontSize: `${size}px`,
                     }}
                 
                 >
-               
-                </section>
+               {text}
+                </div>
+
             </div>
         );
     }

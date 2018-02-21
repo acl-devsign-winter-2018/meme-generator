@@ -1,4 +1,23 @@
+
+body{
+    background-color: rgb(44, 71, 140);
+    font-size: 24px
+}
+
+
 section {
     width: 500px;
     height: 500px
 }
+
+
+div.meme{
+    height: 700px;
+    max-width: 100%;
+    background-repeat: no-repeat;
+    background-image: cover;
+    background-size: contain;
+    background-position: center;
+    margin: 0 auto
+}
+
