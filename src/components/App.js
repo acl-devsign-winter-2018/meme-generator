@@ -25,7 +25,7 @@ export default class App extends Component {
     this.handleFooter = this.handleFooter.bind(this);
     this.handleBackground = this.handleBackground.bind(this);
   }
-  
+
 
   handleFontChange({ target }) {
     this.setState({
