@@ -1,5 +1,8 @@
 import React, { Component } from 'react';
 import './App.css';
+import dom2image from 'dom-to-image';
+import fileSaver from 'file-saver';
+
 
 export default class App extends Component {
     constructor () {
@@ -15,6 +18,8 @@ export default class App extends Component {
         this.handleText = this.handleText.bind(this);
         this.handleColor = this.handleColor.bind(this);
         this.handleSize = this.handleSize.bind(this);
+        this.handleExport = this.handleExport.bind(this)
+
     }
 
     handleUpload({ target }) {
@@ -25,8 +30,13 @@ export default class App extends Component {
         reader.onload = () => {
             this.setState({ background: reader.result})
         }
-
     }
+
+    handleExport(){
+        dom2image.toBlob(this.div).then(blob => {
+            fileSaver.saveAs(blob, 'meme.png');
+        })
+    }    
 
     handleText({ target }){
         this.setState({
@@ -46,11 +56,15 @@ export default class App extends Component {
         })
     }
 
+   
+
     render() {
         const { background, color, content, size, text } = this.state;
 
         return (
-            <div className="App">
+            
+            <section>
+                <div className="App">
                 <header>
                     <h1 className="App-title"> Generate A Meme</h1>
                 </header>
@@ -74,6 +88,10 @@ export default class App extends Component {
                         <input className="fontSize" type="text" onChange={this.handleSize}/>  
                 </div>
 
+                <div>
+                        <button onClick={this.handleExport}>Save</button>
+                </div>
+
                 <div 
                     className ="meme"
                     ref={node => this.div = node}
@@ -84,10 +102,11 @@ export default class App extends Component {
                     }}
                 
                 >
-               {text}
+               <p className="text">{text}</p>
                 </div>
 
-            </div>
+                </div>
+            </section>
         );
     }
 }

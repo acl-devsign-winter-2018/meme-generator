@@ -21,3 +21,17 @@ div.meme{
     margin: 0 auto
 }
 
+section{
+    height: 100%;
+    width: 100%;
+    margin: 0 auto;
+    text-align: center
+}
+
+p.text {
+        position: absolute;
+        margin-top: 160px;
+        text-align: center;
+}
+
+
