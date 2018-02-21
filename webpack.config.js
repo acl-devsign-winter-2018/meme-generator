@@ -2,12 +2,13 @@
 const  CleanWebpackPlugin = require('clean-webpack-plugin');
 const HtmlPlugin = require('html-webpack-plugin');
 
+
 const path = `${__dirname}/build`;
 
 module.exports = {
   entry: './src/index.js',
   output: {
-    path,
+    path, 
     filename: 'bundle.[hash].js',
   },
   devServer: {
@@ -20,13 +21,13 @@ module.exports = {
   ],
   module: {
     rules: [
-      {
+      {   
         test: /\.js$/,
         loader: 'babel-loader',
         exclude: /node_modules/
       },
       {
-        test: /\css$/,
+        test: /\.css$/,
         use: [
           {
             loader: 'style-loader',
@@ -34,9 +35,9 @@ module.exports = {
           },
           {
             loader: 'css-loader',
-            options: {
+            options: { 
               sourceMap: true,
-              importLoaders: 1
+              importLoaders: 1 
             }
           },
           {

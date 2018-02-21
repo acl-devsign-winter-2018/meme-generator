@@ -2,7 +2,7 @@
   "name": "web-pack-react",
   "version": "1.0.0",
   "description": "React lab",
-  "main": "webpack.config.js",
+  "main": "index.js",
   "scripts": {
     "lint": "eslint src",
     "test": "echo \"Error: no test specified\" && exit 1",
