@@ -6,18 +6,16 @@ div, fieldset, section {
 
 fieldset {
   border: none;
-  input {
-    background: rgb(240,240,240)
-  }
+}
+input, button { 
+  background: rgb(240,240,240);
+  margin-top: 20px; 
 }
 
-
-
-section {
+.meme {
   position: relative;
   width: 90vw;
   height: 90vw;
-  background-color: brown;
   background-size: cover;
   p {
     width: 90%;
@@ -28,22 +26,18 @@ section {
     text-align: center;
     color: white;
     filter: drop-shadow(0 0 30px #111);
-
+    /* text-emphasis: stroke; */
   }
 
-  #toptext {
-    position: absolute;
-    margin-top: 10px;
-  }
+  #toptext, #bottomtext { position:absolute; }
+  
+  #toptext { margin-top: 10px; }
 
-  #bottomtext {
-    position: absolute;
-    bottom: 5px;
-  }
+  #bottomtext { bottom: 5px; }
 }
 
 @media (min-width: 500px) {
-  section {
+  .meme {
     width: 450px;
     height: 450px;
   }
