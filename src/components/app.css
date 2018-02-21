@@ -1,0 +1,9 @@
+/* .app {
+  min-height: 100vh;
+  display: grid;
+  grid-template-areas:
+  "header"
+  "content"
+  "footer";
+  grid-template-rows: auto 1fr auto; 
+} */

@@ -1,8 +1,31 @@
-import React, { Compontent } from "react";
+import './App.css';
+import React, { Component } from 'react';
+import dom2image from 'dom-to-image';
+import fileSaver from 'file-saver';
 
-class App extends Compontent {
-    render() {
-   <div>Hello World</div>,
-   
-    }
+
+export default class App extends Component {
+
+  constructor() {
+    super();
+
+    this.state = {
+      name: 'world'
+    };
+  }
+
+  handleClick() {
+    this.setState({ name: 'Seattle' });
+  }
+
+  render() {
+    const { name } = this.state;
+
+    return (
+      <div onClick={() => this.handleClick()}>
+        Hello World <span>{name}</span>
+      </div>
+    );
+
+  }
 }
