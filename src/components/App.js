@@ -6,11 +6,14 @@ export default class App extends Component {
         super();
 
         this.state = {
-            content: "default text here",
-            background: "https://en.wikipedia.org/wiki/Pomeranian_(dog)#/media/File:Pomeranian_600.jpg"
+            text: "default text here",
+            color: "#000000",
+            size: "26"
         };
 
         this.handleUpload = this.handleUpload.bind(this);
+        this.handleText = this.handleText.bind(this);
+
     }
 
     handleUpload({ target }) {
@@ -24,15 +27,24 @@ export default class App extends Component {
 
     }
 
+    handleText({ target }){
+        this.setState({
+            text: target.value
+        })
+    }
+
     render() {
-        const { content, background } = this.state;
+        const { background, content, text } = this.state;
 
         return (
             <div className="App">
                 <header>
-                    <h1 className="App-title"> Title goes here</h1>
+                    <h1 className="App-title"> Generate A Meme</h1>
                 </header>
-            
+                <div>
+                    <label>Your text: </label>
+                            <input type="text" onChange={this.handleMemeText}/>
+                    </div>
 
                 <p>
                     <label>
@@ -48,7 +60,7 @@ export default class App extends Component {
                     }}
                 
                 >
-                This is a section folks
+               
                 </section>
             </div>
         );
