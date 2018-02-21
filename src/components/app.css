@@ -1,4 +1,4 @@
-.app {
+#root {
   min-height: 100vh;
   display: grid;
   grid-template-areas:
@@ -7,3 +7,28 @@
   "footer";
   grid-template-rows: auto 1fr auto; 
 }
+
+#header {
+  grid-area: header;
+  padding: 2rem 2rem 0rem;
+  text-align: center;
+  position: relative;
+}
+
+#main {
+  grid-area: content;
+  text-align: center;
+  margin: 0 auto;
+}
+
+#footer {
+  display: block;
+  text-align: center;
+  padding: 2rem, 2rem, 1rem;
+}
+
+input {
+  box-sizing: border-box; 
+    background-color: #c5e2dc;
+    margin-bottom: 1.5rem;
+    }
