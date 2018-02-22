@@ -1,0 +1,87 @@
+.app {
+  min-height: 100vh;
+  display: grid;
+  grid-template-areas:
+  "header"
+  "content"
+  "footer";
+  grid-template-rows: auto 1fr auto;
+}
+
+#header {
+  grid-area: header;
+  padding: 2rem 2rem 0rem;
+  text-align: center;
+  position: relative;
+}
+
+#main {
+  grid-area: content;
+  text-align: center;
+  margin: 0 auto;
+}
+
+#footer {
+  grid-area: footer;
+  padding: 2rem 2rem 1rem;
+  text-align: center;
+}
+
+input {
+  font-size: 0.8rem;
+  padding: 0.5rem;
+}
+
+.output {
+  position: relative;
+  width: 320px;
+  height: 320px;
+  margin: 0 auto;
+}
+
+.background {
+  position: absolute;
+  margin: 0 auto;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+}
+
+.textTop {
+  position: absolute;
+  z-index: 10;
+  top: 2rem;
+  left: 50%;
+  transform: translateX(-50%)
+}
+
+.textBottom {
+  position: absolute;
+  z-index: 10;
+  bottom: 2rem;
+  left: 50%;
+  transform: translateX(-50%)
+}
+
+.export-button {
+  margin: 1rem 0 0;
+  font-size: 1rem;
+  text-transform: uppercase;
+  padding: .7rem 1rem;
+  color: #fff;
+  background-color: #f15e22;
+  transition: 0.3s ease all;
+  border: 0px;
+  border-radius: 4px;
+}
+
+.export-button:hover {
+  background-color: rgb(141, 54, 20);
+}
+
+@media (min-width: 600px) {
+  .output {
+    width: 500px;
+    height: 500px;
+  }
+}
