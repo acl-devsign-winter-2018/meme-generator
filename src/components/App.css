@@ -1,0 +1,68 @@
+header {
+  font-size: 2em;
+  background-color: indigo;
+  color: lightgrey;
+}
+
+input {
+  width: 60%;
+  height: 1.75em;
+}
+
+.text-size {
+  margin-bottom: 50px;
+}
+
+p {
+  font-size: .5em;
+}
+
+.uploader {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+section.meme {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  height: 100%;
+  width: 100%;
+  margin: auto;
+
+  background: 
+    url()
+    no-repeat
+    cover
+}
+
+.container {
+  width: 500px;
+  height: 450px;
+  margin: 0 auto;
+}
+
+input {
+  height: 2em;
+}
+
+.save {
+  margin: 20 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+button {
+  box-shadow: -5px 5px 5px grey;
+  margin-left: 2%;
+  font-size: .5em;
+}
+
+button:active {
+  box-shadow: -2px 2px 2px;
+}
